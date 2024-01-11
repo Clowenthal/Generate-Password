@@ -1,3 +1,4 @@
+// variable selection
 var charLength = 8;
 var multiSelection = '';
 var upperCaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -16,8 +17,8 @@ generateBtn.addEventListener('click', writePassword);
 function writePassword() {
 	var prompts = getPrompts(); {
 	var passwordText = document.querySelector('#password');
-
-		if(prompts) {
+	
+	if(prompts) {
 	var newPass = generatePassword();
 	passwordText.value = newPass;
 		} else {
@@ -35,13 +36,14 @@ function generatePassword() {
 	}
 	return password;
 }
-
+// This is calling the Prompt function to break down the questions that are being asked when generating the new password
 function getPrompts(){
 	multiSelection = '';
 	charLength = parseInt(prompt("How many characters do you want your password to be? (8-128"));
 
 if (isNaN(charLength) || charLength < 8 || charLength > 128) {
   	alert("Your desired input does not meet the criteria. Please try again.");
+	// If you do not meet the criteria length given then the alert message will be returned as wrong and will ask you to try again
 	return false;
 }
 if (confirm("Would you like uppercase letters in your password?")) {
